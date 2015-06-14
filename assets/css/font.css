@@ -1,0 +1,8 @@
+@font-face {
+    font-family: BreePeru_Bold;
+    src: url(font/BreePeru_Bold_0.otf);
+}
+
+body{
+	font-family: BreePeru_Bold;
+}
