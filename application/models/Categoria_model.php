@@ -31,6 +31,17 @@ class Categoria_model extends CI_Model {
 		}
 	}
 
+	public function obtenerCategoriaDetalles($idCategoria)
+	{
+		$this->db->where('categoria_id', $idCategoria);
+		$query = $this->db->get('categoria_detalle');
+		if ($query->num_rows() > 0) {
+			return $query;
+		}else{
+			return false;
+		}
+	}
+
 	public function insertarCategoria($data)
 	{
 		$datos = array(

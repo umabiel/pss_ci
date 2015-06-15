@@ -53,6 +53,10 @@ $(document).ready(function() {
 	// 	$('#cntAdmin').html('some textsss');
 	// });
 
+	$('#cmbFilterCategorias').change(function(event) {
+		window.location.href = "<?php echo base_url(); ?>/index.php/admin/empresasxcategoria/" + $(this).val() ;
+	});
+
 });
 
 

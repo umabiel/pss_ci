@@ -88,6 +88,7 @@ body {
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
+            <li role="presentation"><a id="btnUsuarios" class="btnUsuarios" href="<?php echo base_url() . "index.php/admin/usuarios"; ?>">Usuarios</a></li>
             <li role="presentation"><a id="btnCategorias" class="btnCategorias" href="<?php echo base_url() . "index.php/admin/categorias"; ?>">Categorias</a></li>
             <li role="presentation"><a id="btnEmpresas" class="btnEmpresas" href="<?php echo base_url() . "index.php/admin/empresas"; ?>">Empresas</a></li>
             <li role="presentation"><a href="<?php echo base_url() . "index.php/admin/logout" ?>">Salir</a></li>

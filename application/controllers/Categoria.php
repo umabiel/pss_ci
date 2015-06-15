@@ -18,6 +18,7 @@ class Categoria extends CI_Controller {
 			$data['categoria'] = $this->categoria_model->obtenerCategorias();
 		}else{
 			$data['categoria'] = $this->categoria_model->obtenerCategoria($data['idCategoria']);
+			$data['categoria_detalle'] = $this->categoria_model->obtenerCategoriaDetalles($data['idCategoria']);
 			$data['empresas'] = $this->empresa_model->obtenerEmpresasXCategoria($data['idCategoria']);
 		}		
 

@@ -5,6 +5,24 @@
 	</div>
 </div>
 
+<div class="row" style="margin-bottom:15px;">
+	<div class="col-md-6">
+		Filtrar por :
+	</div>
+	<div class="col-md-6">
+		<select id="cmbFilterCategorias" name="cmbFilterCategorias" class="form-control">
+			<option value="">- Seleccione Categoria -</option>
+			<?php
+			foreach ($categorias->result() as $categoria) {
+			?>
+				<option value="<?php echo $categoria->id; ?>"><?php echo $categoria->categoria; ?></option>
+			<?php
+			}
+			?>
+		</select>
+	</div>
+</div>
+
 <?php
 		foreach ($empresas->result() as $empresa) {
 ?>
