@@ -117,6 +117,7 @@ class Admin extends CI_Controller {
         $datos['txtTelefonoEmpresa'] = $this->input->post('txtTelefonoEmpresa');
         $datos['txtDirecccionEmpresa'] = $this->input->post('txtDirecccionEmpresa');
         $datos['txtDescripcionEmpresa'] = $this->input->post('txtDescripcionEmpresa');
+        $datos['txtProductoEstrellaEmpresa'] = $this->input->post('txtProductoEstrellaEmpresa');
 
     // 
 		$config['upload_path'] = './assets/uploads/empresas/logo/';
@@ -179,6 +180,7 @@ class Admin extends CI_Controller {
         $datos['txtTelefonoEmpresa'] = $this->input->post('txtTelefonoEmpresa');
         $datos['txtDirecccionEmpresa'] = $this->input->post('txtDirecccionEmpresa');
         $datos['txtDescripcionEmpresa'] = $this->input->post('txtDescripcionEmpresa');
+        $datos['txtProductoEstrellaEmpresa'] = $this->input->post('txtProductoEstrellaEmpresa');
 
 
 		$config['upload_path'] = './assets/uploads/empresas/logo/';

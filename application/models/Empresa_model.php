@@ -60,6 +60,7 @@ class Empresa_model extends CI_Model {
 			'celular1' => $data['txtCelularContactoEmpresa'],
 			'telefono1' => $data['txtTelefonoEmpresa'],
 			'direccion' => $data['txtDirecccionEmpresa'],
+			'pestrella' => $data['txtProductoEstrellaEmpresa'],
 			'logotipo' => $data['logotipo'],
 			'pdf_link' => $data['pdf_link']
 			);
@@ -87,6 +88,7 @@ class Empresa_model extends CI_Model {
 				'celular1' => $data['txtCelularContactoEmpresa'],
 				'telefono1' => $data['txtTelefonoEmpresa'],
 				'direccion' => $data['txtDirecccionEmpresa'],
+				'pestrella' => $data['txtProductoEstrellaEmpresa'],
 				'logotipo' => $data['logotipo']
 			);
 		} elseif (isset($data['pdf_link'])) {
@@ -105,6 +107,7 @@ class Empresa_model extends CI_Model {
 				'celular1' => $data['txtCelularContactoEmpresa'],
 				'telefono1' => $data['txtTelefonoEmpresa'],
 				'direccion' => $data['txtDirecccionEmpresa'],
+				'pestrella' => $data['txtProductoEstrellaEmpresa'],
 				'pdf_link' => $data['pdf_link']
 			);
 		} elseif (isset($data['logotipo']) && isset($data['pdf_link'])) {
@@ -123,6 +126,7 @@ class Empresa_model extends CI_Model {
 				'celular1' => $data['txtCelularContactoEmpresa'],
 				'telefono1' => $data['txtTelefonoEmpresa'],
 				'direccion' => $data['txtDirecccionEmpresa'],
+				'pestrella' => $data['txtProductoEstrellaEmpresa'],
 				'logotipo' => $data['logotipo'],
 				'pdf_link' => $data['pdf_link']
 			);
@@ -142,7 +146,8 @@ class Empresa_model extends CI_Model {
 				'correo1' => $data['txtEmailContactoEmpresa'],
 				'celular1' => $data['txtCelularContactoEmpresa'],
 				'telefono1' => $data['txtTelefonoEmpresa'],
-				'direccion' => $data['txtDirecccionEmpresa']
+				'direccion' => $data['txtDirecccionEmpresa'],
+				'pestrella' => $data['txtProductoEstrellaEmpresa']
 			);
 		}
 

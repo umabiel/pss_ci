@@ -98,6 +98,12 @@
     </div>
   </div>
   <div class="form-group">
+    <label for="txtProductoEstrellaEmpresa" class="col-sm-3 control-label">Producto Empresa</label>
+    <div class="col-sm-9">
+      <input class="form-control" id="txtProductoEstrellaEmpresa" name="txtProductoEstrellaEmpresa" placeholder="Descripcion de la Empresa" value="<?php echo $empresa->pestrella; ?>" >
+    </div>
+  </div>
+  <div class="form-group">
     <div class="col-sm-3">
       <label for="chkLogo">Editar Logotipo?</label>
       <input type="checkbox" id="chkLogo" name="chkLogo">

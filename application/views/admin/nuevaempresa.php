@@ -93,6 +93,12 @@
     </div>
   </div>
   <div class="form-group">
+    <label for="txtProductoEstrellaEmpresa" class="col-sm-3 control-label">Producto Empresa</label>
+    <div class="col-sm-9">
+      <input class="form-control" id="txtProductoEstrellaEmpresa" name="txtProductoEstrellaEmpresa" placeholder="Producto Estrella Empresa">
+    </div>
+  </div>
+  <div class="form-group">
     <label for="fileLogoEmpresa" class="col-sm-3 control-label">Logotipo</label>
     <div class="col-sm-9">
       <input type="file" class="form-control" id="fileLogoEmpresa" name="fileLogoEmpresa">
