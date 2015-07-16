@@ -67,6 +67,20 @@ $(document).ready(function() {
 	});
 
 
+	$('#chkIcono').change(function(event) {
+		$('#fileIconoCategoria').prop('disabled', !this.checked);
+	});
+	$('#chkFondo').change(function(event) {
+		$('#fileFondoCategoria').prop('disabled', !this.checked);
+	});
+	$('#chkCabecera').change(function(event) {
+		$('#fileCabeceraCategoria').prop('disabled', !this.checked);
+	});
+	$('#chkBoton').change(function(event) {
+		$('#fileBtnCategoria').prop('disabled', !this.checked);
+	});
+
+
 });
 
 

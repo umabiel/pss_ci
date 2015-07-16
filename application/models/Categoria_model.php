@@ -57,13 +57,44 @@ class Categoria_model extends CI_Model {
 
 	public function actualizarcategoria($data)
 	{
-		$datos = array(
-			'categoria' => $data['txtNombreCategoria'],
-			'icono' => $data['icono'],
-			'fondo' => $data['fondo'],
-			'cabecera' => $data['cabecera'],
-			'botonCategoria' => $data['botonCategoria']
-		);
+		if (isset($data['chkIcono'])) {
+			
+			$datos = array(
+				'categoria' => $data['txtNombreCategoria'],
+				'icono' => $data['icono']
+			);
+
+		} elseif (isset($data['chkFondo'])) {
+			
+			$datos = array(
+				'categoria' => $data['txtNombreCategoria'],
+				'fondo' => $data['fondo']
+			);
+
+		} elseif (isset($data['chkCabecera'])) {
+			
+			$datos = array(
+				'categoria' => $data['txtNombreCategoria'],
+				'cabecera' => $data['cabecera']
+			);
+
+		} elseif (isset($data['chkBoton'])) {
+			
+			$datos = array(
+				'categoria' => $data['txtNombreCategoria'],
+				'botonCategoria' => $data['botonCategoria']
+			);
+		} else {
+
+			$datos = array(
+				'categoria' => $data['txtNombreCategoria'],
+				'icono' => $data['icono'],
+				'fondo' => $data['fondo'],
+				'cabecera' => $data['cabecera'],
+				'botonCategoria' => $data['botonCategoria']
+			);
+
+		}
 
 		$this->db->where('id', $data['txtCategoriaId']);
 		return $this->db->update('categorias', $datos);

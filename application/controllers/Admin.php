@@ -312,39 +312,50 @@ class Admin extends CI_Controller {
 
 		$datos['txtNombreCategoria'] = $this->input->post('txtNombreCategoria');
 
-		if ($this->upload->do_upload('fileIconoCategoria')) {
-        $data = $this->upload->data();
-        $nombreIconoCategoria = $data['file_name'];
-    }else{
-    		$nombreIconoCategoria = '';
-    }
+        if ($this->input->post('chkIcono') == 'on') {
 
-    if ($this->upload->do_upload('fileFondoCategoria')) {
-        $data = $this->upload->data();
-        $nombreFondoCategoria = $data['file_name'];
-    }else{
-    		$nombreFondoCategoria = '';
-    }
+    		if ($this->upload->do_upload('fileIconoCategoria')) {
+                $data = $this->upload->data();
+                $nombreIconoCategoria = $data['file_name'];
+            }else{
+            		$nombreIconoCategoria = '';
+            }
+            $datos['icono'] = $nombreIconoCategoria;
+        }
 
-    if ($this->upload->do_upload('fileCabeceraCategoria')) {
-        $data = $this->upload->data();
-        $nombreCabeceraCategoria = $data['file_name'];
-    }else{
-    		$nombreCabeceraCategoria = '';
-    }
+        if ($this->input->post('chkFondo') == 'on') {
 
-    if ($this->upload->do_upload('fileBtnCategoria')) {
-        $data = $this->upload->data();
-        $nombreBtnCategoria = $data['file_name'];
-    }else{
-    		$nombreBtnCategoria = '';
-    }
+            if ($this->upload->do_upload('fileFondoCategoria')) {
+                $data = $this->upload->data();
+                $nombreFondoCategoria = $data['file_name'];
+            }else{
+            		$nombreFondoCategoria = '';
+            }
+            $datos['fondo'] = $nombreFondoCategoria;
+        }
 
-    $datos['icono'] = $nombreIconoCategoria;
-    $datos['fondo'] = $nombreFondoCategoria;
-    $datos['cabecera'] = $nombreCabeceraCategoria;
-    $datos['botonCategoria'] = $nombreBtnCategoria;
+        if ($this->input->post('chkCabecera') == 'on') {
 
+            if ($this->upload->do_upload('fileCabeceraCategoria')) {
+                $data = $this->upload->data();
+                $nombreCabeceraCategoria = $data['file_name'];
+            }else{
+            		$nombreCabeceraCategoria = '';
+            }
+            $datos['cabecera'] = $nombreCabeceraCategoria;
+        }
+
+        if ($this->input->post('chkBoton') == 'on') {
+
+            if ($this->upload->do_upload('fileBtnCategoria')) {
+                $data = $this->upload->data();
+                $nombreBtnCategoria = $data['file_name'];
+            }else{
+            		$nombreBtnCategoria = '';
+            }
+            $datos['botonCategoria'] = $nombreBtnCategoria;
+        }
+    
 		$result = $this->categoria_model->actualizarcategoria($datos);
 		// $this->categorias();
 		redirect('admin/categorias');

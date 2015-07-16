@@ -105,6 +105,24 @@ class Empresa_model extends CI_Model {
 				'celular1' => $data['txtCelularContactoEmpresa'],
 				'telefono1' => $data['txtTelefonoEmpresa'],
 				'direccion' => $data['txtDirecccionEmpresa'],
+				'pdf_link' => $data['pdf_link']
+			);
+		} elseif (isset($data['logotipo']) && isset($data['pdf_link'])) {
+			$datos = array(
+				'ruc' => $data['txtRucEmpresa'],
+				'categoria_id' => $data['cmbCategoriaEmpresa'],
+				'razonsocial' => $data['txtRazonSocialEmpresa'],
+				'nombrecomercial' => $data['txtNombreComercialEmpresa'],
+				'descripcion' => $data['txtDescripcionEmpresa'],
+				'web' => $data['txtWebEmpresa'],
+				'contacto1' => $data['txtNombreContactoEmpresa'],
+				'apaterno' => $data['txtAPaternoContactoEmpresa'],
+				'amaterno' => $data['txtAMaternoContactoEmpresa'],
+				'cargo' => $data['txtCargoEmpresa'],
+				'correo1' => $data['txtEmailContactoEmpresa'],
+				'celular1' => $data['txtCelularContactoEmpresa'],
+				'telefono1' => $data['txtTelefonoEmpresa'],
+				'direccion' => $data['txtDirecccionEmpresa'],
 				'logotipo' => $data['logotipo'],
 				'pdf_link' => $data['pdf_link']
 			);

@@ -22,38 +22,38 @@
           </div>
           <div class="form-group">
             <div class="col-sm-3">
-              <label for="chkLogo">Editar icono?</label>
-              <input type="checkbox" id="chkLogo" name="chkLogo">
+              <label for="chkIcono">Editar icono?</label>
+              <input type="checkbox" id="chkIcono" name="chkIcono">
             </div>
             <div class="col-sm-9">
-              <input type="file" class="form-control" id="fileIconoCategoria" name="fileIconoCategoria">
+              <input type="file" class="form-control" id="fileIconoCategoria" name="fileIconoCategoria" disabled>
             </div>
           </div>
           <div class="form-group">
             <div class="col-sm-3">
-              <label for="chkLogo">Editar Fondo?</label>
-              <input type="checkbox" id="chkLogo" name="chkLogo">
+              <label for="chkFondo">Editar Fondo?</label>
+              <input type="checkbox" id="chkFondo" name="chkFondo">
             </div>
             <div class="col-sm-9">
-              <input type="file" class="form-control" id="fileFondoCategoria" name="fileFondoCategoria">
+              <input type="file" class="form-control" id="fileFondoCategoria" name="fileFondoCategoria" disabled>
             </div>
           </div>
           <div class="form-group">
             <div class="col-sm-3">
-              <label for="chkLogo">Editar cabecera?</label>
-              <input type="checkbox" id="chkLogo" name="chkLogo">
+              <label for="chkCabecera">Editar cabecera?</label>
+              <input type="checkbox" id="chkCabecera" name="chkCabecera">
             </div>
             <div class="col-sm-9">
-              <input type="file" class="form-control" id="fileCabeceraCategoria" name="fileCabeceraCategoria">
+              <input type="file" class="form-control" id="fileCabeceraCategoria" name="fileCabeceraCategoria" disabled>
             </div>
           </div>
           <div class="form-group">
             <div class="col-sm-3">
-              <label for="chkLogo">Editar Boton?</label>
-              <input type="checkbox" id="chkLogo" name="chkLogo">
+              <label for="chkBoton">Editar Boton?</label>
+              <input type="checkbox" id="chkBoton" name="chkBoton">
             </div>
             <div class="col-sm-9">
-              <input type="file" class="form-control" id="fileBtnCategoria" name="fileBtnCategoria">
+              <input type="file" class="form-control" id="fileBtnCategoria" name="fileBtnCategoria" disabled>
             </div>
           </div>
           <div class="form-group">
