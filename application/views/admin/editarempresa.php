@@ -1,6 +1,6 @@
 <?php 
   $empresa = $empresa->result()[0];
-// print_r($empresa); 
+  // echo "<pre>",print_r($empresa),"</pre>"; 
 ?>
 <form class="form-horizontal" enctype="multipart/form-data" id="frmNuevaEmpresa" action="<?php echo base_url() . "index.php/admin/guardarempresa"; ?>" method="post">
   <div class="form-group">
@@ -18,7 +18,7 @@
       	<?php
 					foreach ($categorias->result() as $categoria) {
 				?>
-					<option value="<?php echo $categoria->id; ?>"><?php echo $categoria->categoria; ?></option>
+					<option value="<?php echo $categoria->id; ?>" <?php echo ($categoria->id == $empresa->categoria_id) ? "selected" : ""; ?> ><?php echo $categoria->categoria; ?></option>
 				<?php
 					}
 				?>
@@ -98,15 +98,21 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="fileLogoEmpresa" class="col-sm-3 control-label">Logotipo</label>
+    <div class="col-sm-3">
+      <label for="chkLogo">Editar Logotipo?</label>
+      <input type="checkbox" id="chkLogo" name="chkLogo">
+    </div>
     <div class="col-sm-9">
-      <input type="file" class="form-control" id="fileLogoEmpresa" name="fileLogoEmpresa">
+      <input type="file" class=" pull-right col-sm-6" id="fileLogoEmpresa" name="fileLogoEmpresa" disabled="disabled">
     </div>
   </div>
   <div class="form-group">
-    <label for="filePdfEmpresa" class="col-sm-3 control-label">PDF Descriptivo</label>
+    <div class="col-sm-3">
+      <label for="chkPdfDesc">Editar PDF?</label>
+      <input type="checkbox" id="chkPdfDesc" name="chkPdfDesc">
+    </div>
     <div class="col-sm-9">
-      <input type="file" class="form-control" id="filePdfEmpresa" name="filePdfEmpresa">
+      <input type="file" class="pull-right col-sm-6" id="filePdfEmpresa" name="filePdfEmpresa" disabled="disabled">
     </div>
   </div>
   <div class="form-group">

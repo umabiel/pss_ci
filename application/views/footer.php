@@ -57,6 +57,16 @@ $(document).ready(function() {
 		window.location.href = "<?php echo base_url(); ?>/index.php/admin/empresasxcategoria/" + $(this).val() ;
 	});
 
+
+	$('#chkLogo').change(function(event) {
+		$('#fileLogoEmpresa').prop('disabled', !this.checked);
+	});
+
+	$('#chkPdfDesc').change(function(event) {
+		$('#filePdfEmpresa').prop('disabled', !this.checked);
+	});
+
+
 });
 
 

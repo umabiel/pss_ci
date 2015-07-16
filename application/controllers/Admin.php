@@ -162,22 +162,23 @@ class Admin extends CI_Controller {
 
 	public function guardarempresa()
 	{
+
 		$datos['txtEmpresaId'] = $this->input->post('txtEmpresaId');
 		$datos['txtNombreEmpresa'] = $this->input->post('txtNombreEmpresa');
-    $datos['txtRucEmpresa'] = $this->input->post('txtRucEmpresa');
-    $datos['cmbCategoriaEmpresa'] = $this->input->post('cmbCategoriaEmpresa');
-    $datos['txtRazonSocialEmpresa'] = $this->input->post('txtRazonSocialEmpresa');
-    $datos['txtNombreComercialEmpresa'] = $this->input->post('txtNombreComercialEmpresa');
-    $datos['txtWebEmpresa'] = $this->input->post('txtWebEmpresa');
-    $datos['txtNombreContactoEmpresa'] = $this->input->post('txtNombreContactoEmpresa');
-    $datos['txtAPaternoContactoEmpresa'] = $this->input->post('txtAPaternoContactoEmpresa');
-    $datos['txtAMaternoContactoEmpresa'] = $this->input->post('txtAMaternoContactoEmpresa');
-    $datos['txtCargoEmpresa'] = $this->input->post('txtCargoEmpresa');
-    $datos['txtEmailContactoEmpresa'] = $this->input->post('txtEmailContactoEmpresa');
-    $datos['txtCelularContactoEmpresa'] = $this->input->post('txtCelularContactoEmpresa');
-    $datos['txtTelefonoEmpresa'] = $this->input->post('txtTelefonoEmpresa');
-    $datos['txtDirecccionEmpresa'] = $this->input->post('txtDirecccionEmpresa');
-    $datos['txtDescripcionEmpresa'] = $this->input->post('txtDescripcionEmpresa');
+        $datos['txtRucEmpresa'] = $this->input->post('txtRucEmpresa');
+        $datos['cmbCategoriaEmpresa'] = $this->input->post('cmbCategoriaEmpresa');
+        $datos['txtRazonSocialEmpresa'] = $this->input->post('txtRazonSocialEmpresa');
+        $datos['txtNombreComercialEmpresa'] = $this->input->post('txtNombreComercialEmpresa');
+        $datos['txtWebEmpresa'] = $this->input->post('txtWebEmpresa');
+        $datos['txtNombreContactoEmpresa'] = $this->input->post('txtNombreContactoEmpresa');
+        $datos['txtAPaternoContactoEmpresa'] = $this->input->post('txtAPaternoContactoEmpresa');
+        $datos['txtAMaternoContactoEmpresa'] = $this->input->post('txtAMaternoContactoEmpresa');
+        $datos['txtCargoEmpresa'] = $this->input->post('txtCargoEmpresa');
+        $datos['txtEmailContactoEmpresa'] = $this->input->post('txtEmailContactoEmpresa');
+        $datos['txtCelularContactoEmpresa'] = $this->input->post('txtCelularContactoEmpresa');
+        $datos['txtTelefonoEmpresa'] = $this->input->post('txtTelefonoEmpresa');
+        $datos['txtDirecccionEmpresa'] = $this->input->post('txtDirecccionEmpresa');
+        $datos['txtDescripcionEmpresa'] = $this->input->post('txtDescripcionEmpresa');
 
 
 		$config['upload_path'] = './assets/uploads/empresas/logo/';
@@ -188,29 +189,31 @@ class Admin extends CI_Controller {
 
 		$this->load->library('upload', $config);
 
-		if ($this->upload->do_upload('fileLogoEmpresa')) {
-        $data = $this->upload->data();
-        $logoEmpresa = $data['file_name'];
-    }else{
-    		$logoEmpresa = '';
-    }
+        if ($this->input->post('chkLogo') == 'on') {
+            if ($this->upload->do_upload('fileLogoEmpresa')) {
+                $data = $this->upload->data();
+                $logoEmpresa = $data['file_name'];
+            }else{
+                $logoEmpresa = '';
+            }
+            $datos['logotipo'] = $logoEmpresa;
+        }
 
-    if ($this->upload->do_upload('filePdfEmpresa')) {
-        $data = $this->upload->data();
-        $pdfEmpresa = $data['file_name'];
-    }else{
-    		$pdfEmpresa = '';
-    }
+		
+        if ($this->input->post('chkPdfDesc') == 'on') {
+            if ($this->upload->do_upload('filePdfEmpresa')) {
+                $data = $this->upload->data();
+                $pdfEmpresa = $data['file_name'];
+            }else{
+                $pdfEmpresa = '';
+            }
+            $datos['pdf_link'] = $pdfEmpresa;
+        }
 
-		$datos['logotipo'] = $logoEmpresa;
-		$datos['pdf_link'] = $pdfEmpresa;
 
+        $result = $this->empresa_model->actualizarempresa($datos);
 
-
-
-    $result = $this->empresa_model->actualizarempresa($datos);
-
-    redirect('admin/empresas');
+        redirect('admin/empresas');
 	}
 
 	public function eliminarempresa()
